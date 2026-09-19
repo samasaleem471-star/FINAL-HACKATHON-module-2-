@@ -120,6 +120,28 @@ if (document.querySelector("#welcomeName")) {
   loadUser();
 }
 
+// DASHBOARD COUNTS
+async function loadDashboardCounts() {
+  const { count: totalCount } = await client
+    .from("recipes")
+    .select("*", { count: "exact", head: true });
+
+  const { data: sessionData } = await client.auth.getSession();
+  let userId = sessionData.session.user.id;
+
+  const { count: myCount } = await client
+    .from("recipes")
+    .select("*", { count: "exact", head: true })
+    .eq("user_id", userId);
+
+  document.querySelector("#totalRecipes").textContent = totalCount;
+  document.querySelector("#myRecipesCount").textContent = myCount;
+}
+
+if (document.querySelector("#welcomeName")) {
+  loadDashboardCounts();
+}
+
 // NAVBAR UI ACC TO USERS LOGIN
 async function checkUser() {
   const { data } = await client.auth.getSession();
