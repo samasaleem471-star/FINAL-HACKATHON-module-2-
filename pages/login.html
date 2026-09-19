@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RecipeShare - Cook it. Share it.</title>
+
+      <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+ <!-- css  -->
+  <link href="../style.css" rel="stylesheet">
+</head>
+<body class="auth-page">
+
+      <main class="auth-card">
+    <div class="text-center mb-4">
+      <a class="brand fs-3" href="../index.html">Recipe<span>Share</span></a>
+      <h1 class="h3 fw-bold mt-3 mb-1">Welcome back</h1>
+      <p class="text-secondary mb-0">Login to manage your recipes.</p>
+    </div>
+
+    <!-- Error messages will be shown here later -->
+    <div id="formMessage" class="alert d-none" role="alert"></div>
+
+    <form id="loginForm">
+      <div class="mb-3">
+        <label for="loginEmail" class="form-label fw-semibold">Email</label>
+        <input type="email" class="form-control" id="loginEmail" name="email" autocomplete="email" required>
+      </div>
+
+      <div class="mb-4">
+        <label for="loginPassword" class="form-label fw-semibold">Password</label>
+        <input type="password" class="form-control" id="loginPassword" name="password" autocomplete="current-password" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100 py-2 fw-bold" id="loginBtn">Login</button>
+    </form>
+
+    <p class="text-center text-secondary mt-4 mb-0">
+      New to RecipeShare? <a href="signup.html">Sign up</a>
+    </p>
+  </main>
+
+
+      <!-- links  -->
+  <!-- Bootstrap's own script  -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="../app.js"></script>
+   <!-- links  -->
+</body>
+</body>
+</html>

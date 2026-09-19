@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RecipeShare - Cook it. Share it.</title>
+        <link rel="shortcut icon" href="../images/icon.jfif" type="image/x-icon">
+
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <!-- css  -->
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+      <div class="container">
+        <a class="navbar-brand brand" href="index.html"
+          >Recipe<span>Share</span></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pages/recipes.html">All Recipes</a>
+            </li>
+
+            <!-- shown when logged out -->
+            <li class="nav-item guest-only">
+              <a class="nav-link" href="pages/login.html">Login</a>
+            </li>
+            <li class="nav-item guest-only">
+              <a
+                class="btn btn-primary rounded-pill px-4"
+                href="pages/signup.html"
+                >Sign up</a
+              >
+            </li>
+
+            <!-- shown when logged in -->
+            <li class="nav-item user-only d-none">
+              <a class="nav-link" href="pages/dashboard.html">Dashboard</a>
+            </li>
+            <li class="nav-item user-only d-none">
+              <a class="nav-link" href="pages/my-recipes.html">My Recipes</a>
+            </li>
+            <li class="nav-item user-only d-none">
+              <button
+                type="button"
+                class="btn btn-outline-secondary rounded-pill px-4"
+                id="logoutBtn"
+              >
+                Logout
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero py-5">
+      <div class="container py-lg-4">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7">
+            <h1 class="display-4 fw-bold">
+              Cook it. Share it. Find your next favourite dish.
+            </h1>
+            <p class="lead my-4">
+              Browse recipes from home cooks, or post your own biryani, pasta or
+              pudding in a few minutes.
+            </p>
+
+            <form
+              action="./pages/recipes.html"
+              method="get"
+              class="input-group input-group-lg search-box"
+              role="search"
+            >
+              <input
+                type="search"
+                name="q"
+                class="form-control"
+                placeholder="Search recipes by title"
+                aria-label="Search recipes by title"
+              />
+              <button class="btn btn-turmeric px-4" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+          <div class="col-lg-5 d-none d-lg-block">
+            <div
+              class="hero-visual d-flex align-items-center justify-content-center"
+              aria-hidden="true"
+            >
+              🍲
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CATEGORIES -->
+    <section class="py-5">
+      <div class="container">
+        <h2 class="fw-bold mb-4">Browse by category</h2>
+        <div class="row g-3 row-cols-2 row-cols-md-3 row-cols-lg-6">
+          <div class="col">
+            <a
+              href="./pages/recipes.html?category=Pakistani"
+              class="card cat-card text-center text-decoration-none text-reset h-100"
+              ><div class="card-body">
+                <i class="bi bi-egg-fried text-primary"></i>
+                <div class="fw-bold mt-2">Pakistani</div>
+              </div></a
+            >
+          </div>
+          <div class="col">
+            <a
+              href="./pages/recipes.html?category=Italian"
+              class="card cat-card text-center text-decoration-none text-reset h-100"
+              ><div class="card-body">
+                <i class="bi bi-basket text-primary"></i>
+                <div class="fw-bold mt-2">Italian</div>
+              </div></a
+            >
+          </div>
+          <div class="col">
+            <a
+              href="./pages/recipes.html?category=Chinese"
+              class="card cat-card text-center text-decoration-none text-reset h-100"
+              ><div class="card-body">
+                <i class="bi bi-cup-hot text-primary"></i>
+                <div class="fw-bold mt-2">Chinese</div>
+              </div></a
+            >
+          </div>
+          <div class="col">
+            <a
+              href="./pages/recipes.html?category=Desserts"
+              class="card cat-card text-center text-decoration-none text-reset h-100"
+              ><div class="card-body">
+                <i class="bi bi-cake2 text-primary"></i>
+                <div class="fw-bold mt-2">Desserts</div>
+              </div></a
+            >
+          </div>
+          <div class="col">
+            <a
+              href="./pages/recipes.html?category=Fast%20Food"
+              class="card cat-card text-center text-decoration-none text-reset h-100"
+              ><div class="card-body">
+                <i class="bi bi-lightning-charge text-primary"></i>
+                <div class="fw-bold mt-2">Fast Food</div>
+              </div></a
+            >
+          </div>
+          <div class="col">
+            <a
+              href="./pages/recipes.html?category=Healthy"
+              class="card cat-card text-center text-decoration-none text-reset h-100"
+              ><div class="card-body">
+                <i class="bi bi-heart-pulse text-primary"></i>
+                <div class="fw-bold mt-2">Healthy</div>
+              </div></a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LATEST RECIPES -->
+    <section class="pb-5">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-end mb-4">
+          <h2 class="fw-bold mb-0">Latest recipes</h2>
+          <a href="./pages/recipes.html" class="fw-bold text-decoration-none"
+            >See all recipes</a
+          >
+        </div>
+
+        <div class="row g-4" id="recentRecipes">
+        
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="py-5 bg-white border-top border-bottom">
+      <div class="container">
+        <h2 class="fw-bold mb-4">How RecipeShare works</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div
+              class="step-num d-flex align-items-center justify-content-center mb-3"
+            >
+              1
+            </div>
+            <h3 class="h5 fw-bold">Create an account</h3>
+            <p class="text-secondary mb-0">
+              Sign up with your email and open your dashboard.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <div
+              class="step-num d-flex align-items-center justify-content-center mb-3"
+            >
+              2
+            </div>
+            <h3 class="h5 fw-bold">Post a recipe</h3>
+            <p class="text-secondary mb-0">
+              Add ingredients, instructions, cooking time and a photo.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <div
+              class="step-num d-flex align-items-center justify-content-center mb-3"
+            >
+              3
+            </div>
+            <h3 class="h5 fw-bold">Explore and manage</h3>
+            <p class="text-secondary mb-0">
+              Search other cooks' recipes and edit or delete your own anytime.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="py-5 text-center">
+      <div class="container">
+        <h2 class="fw-bold">Got a recipe worth sharing?</h2>
+        <p class="text-secondary mb-4">
+          Join RecipeShare and add your first recipe today.
+        </p>
+        <a href="./pages/signup.html" class="btn btn-primary btn-lg rounded-pill px-5"
+          >Create free account</a
+        >
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-4">
+      <div
+        class="container d-flex flex-column flex-md-row justify-content-between gap-2"
+      >
+        <span>RecipeShare - SMIT Batch 17 final project</span>
+        <span>Built with HTML, Bootstrap, JavaScript and Supabase</span>
+      </div>
+    </footer>
+
+    <!-- links  -->
+    <!-- Bootstrap's own script  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="app.js"></script>
+    <!-- links  -->
+  </body>
+</html>

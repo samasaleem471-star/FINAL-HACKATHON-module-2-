@@ -1,0 +1,215 @@
+/* Colours: change these to re-theme the whole site */
+:root {
+  --bs-primary: #2f6b4f;
+  --bs-primary-rgb: 47, 107, 79;
+  --bs-link-color: #2f6b4f;
+  --bs-link-hover-color: #1f4d3a;
+  --leaf-dark: #1f4d3a;
+  --turmeric: #f2b705;
+  --pomegranate: #7a1f3d;
+}
+
+body {
+  background: #f7faf5;
+  color: #1b2a24;
+}
+
+/* Buttons */
+.btn-primary {
+  --bs-btn-bg: #2f6b4f;
+  --bs-btn-border-color: #2f6b4f;
+  --bs-btn-hover-bg: #1f4d3a;
+  --bs-btn-hover-border-color: #1f4d3a;
+  --bs-btn-active-bg: #1f4d3a;
+  --bs-btn-active-border-color: #1f4d3a;
+}
+.btn-turmeric {
+  background: var(--turmeric);
+  color: #1b2a24;
+  font-weight: 700;
+  border: 0;
+}
+.btn-turmeric:hover {
+  background: #d9a304;
+  color: #1b2a24;
+}
+
+/* Navbar brand */
+.brand {
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: var(--leaf-dark) !important;
+}
+.brand span {
+  color: var(--pomegranate);
+}
+
+/* Hero */
+.hero {
+  background: var(--leaf-dark);
+  color: #fff;
+}
+.hero p.lead {
+  color: #d3e6da;
+}
+.hero-visual {
+  background: var(--turmeric);
+  border-radius: 24px;
+  font-size: 6rem;
+  aspect-ratio: 4 / 3;
+}
+.search-box {
+  max-width: 540px;
+}
+
+/* Category cards */
+.cat-card {
+  border: 1px solid #dfe8e1;
+  transition: border-color 0.2s;
+}
+.cat-card:hover {
+  border-color: #2f6b4f;
+}
+.cat-card .bi {
+  font-size: 2rem;
+}
+
+/* Recipe cards */
+.recipe-card {
+  border: 1px solid #dfe8e1;
+  overflow: hidden;
+}
+.recipe-img {
+  aspect-ratio: 16 / 10;
+  width: 100%;
+  background: #e6efe8;
+  font-size: 3rem;
+}
+.badge-cat {
+  background: #fdf1c7;
+  color: #6b4e00;
+}
+
+/* How it works */
+.step-num {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--pomegranate);
+  color: #fff;
+  font-weight: 800;
+}
+
+/* Footer */
+footer {
+  background: #1b2a24;
+  color: #c9d6cf;
+}
+
+/* ---------- Login / Signup pages ---------- */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 12px;
+  background: #f7faf5;
+}
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  background: #fff;
+  border: 1px solid #dfe8e1;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 8px 24px rgba(31, 77, 58, 0.08);
+}
+.auth-card .form-control {
+  padding: 10px 14px;
+}
+.auth-card .form-control:focus {
+  border-color: #2f6b4f;
+  box-shadow: 0 0 0 0.2rem rgba(47, 107, 79, 0.2);
+}
+.auth-card a {
+  font-weight: 700;
+  text-decoration: none;
+}
+.auth-card a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 24px 18px;
+  }
+}
+
+/* ---------- Dashboard ---------- */
+.dash-banner {
+  background: var(--leaf-dark);
+  color: #fff;
+  border-radius: 16px;
+}
+.dash-banner p {
+  color: #d3e6da;
+}
+.stat-card {
+  border: 1px solid #dfe8e1;
+  border-radius: 14px;
+}
+.stat-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: #e6efe8;
+  color: #2f6b4f;
+  font-size: 1.5rem;
+}
+.stat-number {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+}
+.action-card {
+  border: 2px dashed #2f6b4f;
+  border-radius: 14px;
+  background: #fff;
+  transition: background 0.2s;
+}
+.action-card:hover {
+  background: #eef5f0;
+}
+
+/* ---------- Create / Edit Recipe form ---------- */
+.form-card {
+  background: #fff;
+  border: 1px solid #dfe8e1;
+  border-radius: 16px;
+}
+.form-card .form-control:focus,
+.form-card .form-select:focus {
+  border-color: #2f6b4f;
+  box-shadow: 0 0 0 0.2rem rgba(47, 107, 79, 0.2);
+}
+.image-preview {
+  width: 100%;
+  max-height: 260px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid #dfe8e1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
