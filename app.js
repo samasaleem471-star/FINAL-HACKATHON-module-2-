@@ -42,7 +42,7 @@ signupForm &&
       }
     } catch (err) {
       console.log(err.message);
-      Swal.fire(err.message);
+      Swal.fire("Something went wrong, please try again later");
     }
   });
 
@@ -66,6 +66,7 @@ loginForm &&
       window.location.href = "dashboard.html";
     } catch (err) {
       console.log("login error " + err);
+      Swal.fire("Something went wrong, please try again later!");
     }
   });
 
@@ -90,6 +91,8 @@ logoutBtn &&
 
       if (error) {
         console.log("logout error", error);
+        Swal.fire("Something went wrong, please try again later!");
+
         return;
       }
 
@@ -127,6 +130,7 @@ async function loadDashboardCounts() {
     .select("*", { count: "exact", head: true });
 
   const { data: sessionData } = await client.auth.getSession();
+  if (!sessionData.session) return;
   let userId = sessionData.session.user.id;
 
   const { count: myCount } = await client
@@ -235,8 +239,8 @@ recipeForm &&
     let imageFile = recipeImageInput.files[0];
 
     if (imageFile) {
-      let fileName = `${userId}-${Date.now()}-${imageFile.name}`;
-
+      let cleanName = imageFile.name.replace(/[^a-zA-Z0-9.]/g, "_");
+      let fileName = `${userId}-${Date.now()}-${cleanName}`;
       const { error: uploadError } = await client.storage
         .from("recipe-images")
         .upload(fileName, imageFile);
@@ -498,7 +502,7 @@ myRecipes &&
       if (error) {
         console.log("Error", error.message);
 
-        swal.fire("something went wrong, pleasy try again later");
+        Swal.fire("Something went wrong, please try again later");
       } else {
         await Swal.fire("Deleted", "Your recipe was deleted.", "success");
         window.location.reload();
@@ -529,7 +533,6 @@ async function loadRecipeDetails() {
       `<img src="${data.image_url}" alt="${data.title}" class="w-100 h-100 rounded-4" style="object-fit: cover;">`;
   }
 
-  document.querySelector("#recipeCategory").textContent = data.categories.name;
 
   document.querySelector("#recipeCategory").textContent = data.categories.name;
   document.querySelector("#recipeTitle").textContent = data.title;
